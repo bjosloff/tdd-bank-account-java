@@ -24,7 +24,16 @@ public class AccountTest {
     public void IncreaseAccountBalance()
     {
         Account account = new Account();
-        account.deposit(10);
-        assertThat(account.balance()).isEqualTo(10);
+        account.deposit(20);
+        assertThat(account.balance()).isEqualTo(20);
+    }
+
+    @Test
+    public void DecreaseAccountBalance()
+    {
+        Account account = new Account();
+        account.deposit(100);
+        account.withdraw(20);
+        assertThat(account.balance()).isEqualTo(80);
     }
 }
