@@ -36,4 +36,13 @@ public class AccountTest {
         account.withdraw(20);
         assertThat(account.balance()).isEqualTo(80);
     }
+
+    @Test
+    public void TestforOverdawrnAccount()
+    {
+        Account account = new Account();
+        account.deposit(100);
+        account.withdraw(120);
+        assertThat(account.balance()).isEqualTo(100);
+    }
 }
